@@ -18,14 +18,17 @@ public class CharacterController : MonoBehaviour {
         //let's get some keyboard input
         //and rotate depending on the key that we are pressing
 
+        //scale our speed depending on the movement of the blocks
+        float scaledSpeed = moveSpeed * Manager.MoveSpeed;
+
         //left button, rotate left
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(0, 0, 1 * moveSpeed);
+            transform.Rotate(0, 0, 1 * scaledSpeed);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(0, 0, -1 * moveSpeed);
+            transform.Rotate(0, 0, -1 * scaledSpeed);
         }
 
 
